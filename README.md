@@ -1,8 +1,9 @@
-# Taro
+# Reportoken_backend
 ## 初期設定
 ```
 $ git clone git@github.com:IshimotoTakara/reportoken_backend.git
 $ cd reportoken_backend
+```
 
 ## Docker環境を使う場合
 ```
