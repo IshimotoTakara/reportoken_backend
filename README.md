@@ -1,24 +1,17 @@
-# README
+# Taro
+## 初期設定
+```
+$ git clone git@github.com:IshimotoTakara/reportoken_backend.git
+$ cd reportoken_backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Docker環境を使う場合
+```
+~/reportoken_backend $ docker-compose build
+~/reportoken_backend $ docker-compose run web rake db:create
+~/reportoken_backend $ docker-compose up
 
-Things you may want to cover:
+# 新しくGemを追加した場合、buildし直す
+~/reportoken_backend $ docker-compose build
+```
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## その他
