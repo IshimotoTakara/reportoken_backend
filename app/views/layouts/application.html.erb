@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ReportokenBackend</title>
+  <header>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
+    <div>
+      <nav>
+        <ul>
+          <li><%= link_to "ホーム", root_path %></li>
+          <li><%= link_to "ヘルプ", help_path %></li>
+          <% if logged_in? %>
+          <li><%= link_to "Users", '#' %></li>
+          <li><%= link_to "プロフィール", current_user %></li>
+          <li><%= link_to "設定", '#' %></li>
+          <%# 強引な方法 %>
+          <li><%= button_to "ログアウト", logout_path, method: :delete %></li>
+        </ul>
+        <% else %>
+          <li><%= link_to "ログイン", login_path %></li>
+        <% end %>
+        </ul>
+      </nav>
+    </div>
+  </header>
   <body>
-    <%= yield %>
+    <div>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

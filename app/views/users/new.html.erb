@@ -1,0 +1,25 @@
+<h1>新規登録</h1>
+
+<div>
+  <div>
+    <%= form_for(@user, url: signup_path) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :名前 %>
+      <%= f.text_field :name %>
+
+      <%= f.label :メールアドレス %>
+      <%= f.email_field :email %>
+
+      <%= f.label :パスワード %>
+      <%= f.password_field :password %>
+
+      <%= f.label :パスワードの確認 %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "アカウントを作成" %>
+    <% end %>
+
+     <p>すでにアカウントをお持ちの方 <%= link_to "ログイン", login_path %></p>
+  </div>
+</div>

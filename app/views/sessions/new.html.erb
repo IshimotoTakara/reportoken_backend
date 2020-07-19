@@ -1,0 +1,23 @@
+<h1>ログイン</h1>
+
+<div>
+  <div>
+    <%= form_for(:session, url: login_path) do |f| %>
+
+        <%= f.label :メールアドレス %>
+        <%= f.email_field :email %>
+
+        <%= f.label :パスワード %>
+        <%= f.password_field :password %>
+
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span>ログイン状態を保持</span>
+        <% end %>
+
+        <%= f.submit "ログイン" %>
+    <% end %>
+
+    <p>新しいアカウントを作成 <%= link_to "次へ", signup_path %></p>
+  </div>
+</div>
